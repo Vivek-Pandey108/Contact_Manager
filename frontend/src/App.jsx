@@ -15,7 +15,7 @@ function App() {
 
   //  fetch contacts 
   const fetchContacts = async () => {
-    const res = await axios.get("http://localhost:3000/api/contacts");
+    const res = await axios.get("https://contact-manager-ashen-zeta.vercel.app/api/contacts");
     setContacts(res.data);
   };
 
@@ -60,7 +60,7 @@ function App() {
     const hasError = Object.values(errors).some((x) => x);
     if (hasError || !form.name || !form.phone) return;
 
-    await axios.post("http://localhost:3000/api/contacts", form);
+    await axios.post("https://contact-manager-ashen-zeta.vercel.app/api/contacts", form);
 
     setSuccess("Contact added successfully!");
     setTimeout(() => setSuccess(""), 2000);
@@ -72,7 +72,7 @@ function App() {
 
   //  delete 
   const deleteContact = async (id) => {
-    await axios.delete(`http://localhost:3000/api/contacts/${id}`);
+    await axios.delete(`https://contact-manager-ashen-zeta.vercel.app/api/contacts/${id}`);
 
     setSuccess("Contact deleted successfully!");
     setTimeout(() => setSuccess(""), 2000);
